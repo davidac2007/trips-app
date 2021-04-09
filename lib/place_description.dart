@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
-  String namePlace;
-  int stars;
-  String descriptionPlace;
+  final String placeName;
+  final int stars;
+  final String placeDescription;
 
-  DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
+  DescriptionPlace(this.placeName, this.stars, this.placeDescription);
 
-  String randomDescription =
+  final String randomDescription =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-
-    final star_half = Container(
+    final halfStar = Container(
       margin: EdgeInsets.only(top: 323.0, right: 3.0),
       child: Icon(
         Icons.star_half,
@@ -22,7 +20,7 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    final star_border = Container(
+    final starBorder = Container(
       margin: EdgeInsets.only(top: 323.0, right: 3.0),
       child: Icon(
         Icons.star_border,
@@ -38,18 +36,21 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    final title_stars = Row(
+    final titleStars = Row(
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
           child: Text(
-            namePlace,
-            style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w900),
+            placeName,
+            style: TextStyle(
+                fontFamily: "Lato",
+                fontSize: 30.0,
+                fontWeight: FontWeight.w900),
             textAlign: TextAlign.left,
           ),
         ),
         Row(
-          children: <Widget>[star, star, star, star, star_border],
+          children: <Widget>[star, star, star, star, starBorder],
         )
       ],
     );
@@ -57,8 +58,9 @@ class DescriptionPlace extends StatelessWidget {
     final description = Container(
       margin: new EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
       child: new Text(
-        descriptionPlace,
+        placeDescription,
         style: const TextStyle(
+            fontFamily: "Lato",
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF56575a)),
@@ -66,7 +68,7 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     return Column(
-      children: <Widget>[title_stars, description],
+      children: <Widget>[titleStars, description],
     );
   }
 }

@@ -1,5 +1,6 @@
 # Trips!
 
+😎🌴
 An interesting Trips App for learning Flutter.
 
 ## Welcome to the adventure!!
