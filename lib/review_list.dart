@@ -14,11 +14,17 @@ class ReviewList extends StatelessWidget {
           "There is an amazing place in Sri Lanka",
         ),
         Review(
-          "assets/img/people.jpg",
+          "assets/img/Me.jpg",
           "David Avendaño",
-          "1 review - 5 photos",
-          "There is an amazing place in Sri Lanka",
-        )
+          "2 reviews- 8 photos",
+          "There is an amazing place in Mexico",
+        ),
+        // Review(
+        //   "assets/img/sophie.jpg",
+        //   "Sofía Radillo",
+        //   "10 reviews- 3 photos",
+        //   "There is an amazing place in USA",
+        // )
       ],
     );
   }

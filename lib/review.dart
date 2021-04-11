@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class Review extends StatelessWidget {
   Review(this.imagePath, this.name, this.details, this.comments);
 
-  String imagePath = "";
-  String name = "Varuna Yasas";
-  String details = "1 review - 5 photos";
-  String comments = "There is an amazing place in Sri Lanka";
+  final String imagePath;
+  final String name;
+  final String details;
+  final String comments;
 
   @override
   Widget build(BuildContext context) {
@@ -63,8 +63,8 @@ class Review extends StatelessWidget {
       height: 80.0,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          image: DecorationImage(
-              image: AssetImage('assets/img/people.jpg'), fit: BoxFit.cover)),
+          image:
+              DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover)),
     );
     return Row(
       children: <Widget>[
