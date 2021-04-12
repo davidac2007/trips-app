@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips_app/button.dart';
 
 class DescriptionPlace extends StatelessWidget {
   DescriptionPlace(this.placeName, this.stars, this.placeDescription);
@@ -6,9 +7,6 @@ class DescriptionPlace extends StatelessWidget {
   final int stars;
   final String placeDescription;
 
-  final String randomDescription =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      "\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   @override
   Widget build(BuildContext context) {
     final halfStar = Container(
@@ -64,6 +62,7 @@ class DescriptionPlace extends StatelessWidget {
       margin: new EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
       child: new Text(
         placeDescription,
+        textAlign: TextAlign.justify,
         style: const TextStyle(
             fontFamily: "Lato",
             fontSize: 16.0,
@@ -73,7 +72,8 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     return Column(
-      children: <Widget>[titleStars, description],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[titleStars, description, Button("Navigate")],
     );
   }
 }
