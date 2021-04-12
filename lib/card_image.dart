@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips_app/floating_action_button.dart';
 
 class CardImage extends StatelessWidget {
   CardImage(this.pathImage);
@@ -22,6 +23,9 @@ class CardImage extends StatelessWidget {
                 offset: Offset(0.0, 7.0))
           ]),
     );
-    return card;
+    return Stack(
+      alignment: Alignment(0.9, 1.1),
+      children: <Widget>[card, FloatingActionButtonGreen()],
+    );
   }
 }
