@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/button.dart';
+
+import 'button.dart';
 
 class DescriptionPlace extends StatelessWidget {
   DescriptionPlace(this.placeName, this.stars, this.placeDescription);
