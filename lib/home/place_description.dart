@@ -72,9 +72,12 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[titleStars, description, Button("Navigate")],
+    return Container(
+      margin: EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[titleStars, description, Button("Navigate")],
+      ),
     );
   }
 }

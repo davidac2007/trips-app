@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips_app/home/trips_cupertino.dart';
 import 'package:trips_app/profile/profile.dart';
 import 'package:trips_app/search_trips.dart';
 
@@ -29,19 +30,20 @@ class _TripsState extends State<Trips> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widgetsChildren[indexTap],
-      bottomNavigationBar: Theme(
-        data: Theme.of(context)
-            .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
-        child: BottomNavigationBar(
-          currentIndex: indexTap,
-          onTap: onTapTapped,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-          ],
-        ),
-      ),
+      bottomNavigationBar: TripsCupertino(),
+      // Theme(
+      //   data: Theme.of(context)
+      //       .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
+      //   child: BottomNavigationBar(
+      //     currentIndex: indexTap,
+      //     onTap: onTapTapped,
+      //     items: [
+      //       BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+      //       BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
+      //       BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }

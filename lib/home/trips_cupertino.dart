@@ -36,6 +36,8 @@ class TripsCupertino extends StatelessWidget {
                   builder: (BuildContext context) => Profile());
               break;
           }
+          return CupertinoTabView(
+              builder: (BuildContext context) => HomeTrips());
         },
       ),
     );

@@ -29,7 +29,7 @@ class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen> {
 
   void onPressedFav() {
     setState(() {
-      // Here we changing the icon.
+      // Here we change the icon.
       fav = !fav;
     });
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
