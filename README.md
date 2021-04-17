@@ -1,8 +1,11 @@
-# Trips!
+# Find your trip!
 
-😎🌴
-An interesting Trips App for learning Flutter.
+Hey you! Are you looking to find the best places for your dreamed vacations?🌴
+
+Then you came to the right place!😎
+
+This is an interesting Trips app designed for you to find the best places to visit.🤩
 
 ## Welcome to the adventure!!
 
-In this project, many places are going to be shown and also rated.
+The goal is to assist customers in gathering travel information, posting reviews and opinions of travel-related content.😉
