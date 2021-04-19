@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:trips_app/home/floating_action_button.dart';
 
 class ProfileCardImage extends StatelessWidget {
-  ProfileCardImage(this.pathImage, this.name, this.email);
+  ProfileCardImage(this.pathImage, this.name, this.email, this.steps);
   final String pathImage;
   final String name;
   final String email;
+  final String steps;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class ProfileCardImage extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(pathImage), fit: BoxFit.cover),
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+            borderRadius: BorderRadius.all(Radius.circular(25.0)),
             shape: BoxShape.rectangle,
             boxShadow: <BoxShadow>[
               BoxShadow(
@@ -30,10 +31,10 @@ class ProfileCardImage extends StatelessWidget {
 
     final info = Stack(alignment: Alignment(0.7, 1.0), children: [
       Container(
-          height: 120.0,
-          width: MediaQuery.of(context).size.width * 0.60,
+          height: 105.0,
+          width: MediaQuery.of(context).size.width * 0.650,
           margin:
-              EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0, bottom: 10.0),
+              EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0, bottom: 10.0),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -60,7 +61,16 @@ class ProfileCardImage extends StatelessWidget {
               ),
               Text(email,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 12, fontFamily: "Lato"))
+                      color: Colors.grey, fontSize: 12, fontFamily: "Lato")),
+              SizedBox(
+                height: 10,
+              ),
+              Text(steps,
+                  style: TextStyle(
+                      color: Colors.amber,
+                      fontSize: 14,
+                      fontFamily: "Lato",
+                      fontWeight: FontWeight.bold)),
             ]),
           )),
       FloatingActionButtonGreen()
@@ -69,7 +79,7 @@ class ProfileCardImage extends StatelessWidget {
     return Column(
       children: [
         Stack(
-          alignment: Alignment(0.15, 1.4),
+          alignment: Alignment(0.14, 2),
           children: <Widget>[
             image,
             info,
