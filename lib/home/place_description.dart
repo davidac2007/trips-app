@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/button.dart';
+
+import 'button.dart';
 
 class DescriptionPlace extends StatelessWidget {
   DescriptionPlace(this.placeName, this.stars, this.placeDescription);
@@ -71,9 +72,12 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[titleStars, description, Button("Navigate")],
+    return Container(
+      margin: EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[titleStars, description, Button("Navigate")],
+      ),
     );
   }
 }
