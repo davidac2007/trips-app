@@ -51,7 +51,7 @@ class ProfileTitle extends StatelessWidget {
             Icon(
               Icons.settings,
               color: Colors.grey,
-              size: 20,
+              size: 22,
             )
           ],
         ));
