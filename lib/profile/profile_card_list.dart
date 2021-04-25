@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips_app/profile/profile_app_bar.dart';
 import 'package:trips_app/profile/profile_background.dart';
 import 'package:trips_app/profile/profile_buttons.dart';
 import 'package:trips_app/profile/profile_card_image.dart';
@@ -15,10 +16,7 @@ class ProfileCardImageList extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         scrollDirection: Axis.vertical,
         children: <Widget>[
-          ProfileTitle(),
-          ProfileDetails("assets/img/Me.jpg", "David Avendaño\n",
-              " d.avendano.c@hotmail.com"),
-          ProfileButtons(),
+          ProfileAppBar(),
           ProfileCardImage(
               "assets/img/mountainsk.jpeg",
               "Knuckles Mountains Range",
