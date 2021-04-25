@@ -47,7 +47,7 @@ class ProfileTitle extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 30.0),
             ),
-            SizedBox(width: screenWidth * 0.60),
+            SizedBox(width: screenWidth * 0.55),
             Icon(
               Icons.settings,
               color: Colors.grey,
