@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/profile/profile_app_bar.dart';
-import 'package:trips_app/profile/profile_background.dart';
-import 'package:trips_app/profile/profile_buttons.dart';
 import 'package:trips_app/profile/profile_card_image.dart';
-
-import 'profile_details.dart';
 
 class ProfileCardImageList extends StatelessWidget {
   @override
