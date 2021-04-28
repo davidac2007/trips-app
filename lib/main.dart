@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'home/trips.dart';
+import 'place/ui/screens/trips.dart';
 
 void main() {
   runApp(MyApp());

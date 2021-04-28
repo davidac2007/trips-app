@@ -8,7 +8,7 @@ class Button extends StatelessWidget {
     return InkWell(
       onTap: () {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text("Navigating"),
+          content: SizedBox(height: 50.0, child: Text("Navigating")),
           backgroundColor: Colors.deepPurple[900],
         ));
       },

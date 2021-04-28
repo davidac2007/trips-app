@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/home/trips_cupertino.dart';
-import 'package:trips_app/profile/profile.dart';
-import 'package:trips_app/search_trips.dart';
+import 'package:trips_app/place/ui/widgets/trips_cupertino.dart';
+import 'package:trips_app/user/ui/screens/profile.dart';
+import 'package:trips_app/place/ui/screens/search_trips.dart';
 
 import 'home_trips.dart';
 

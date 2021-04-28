@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/profile/profile_background.dart';
-import 'package:trips_app/profile/profile_buttons.dart';
-import 'package:trips_app/profile/profile_card_image.dart';
+import 'package:trips_app/user/ui/widgets/profile_background.dart';
+import 'package:trips_app/user/ui/widgets/profile_buttons.dart';
+import 'package:trips_app/user/ui/widgets/profile_card_image.dart';
 
 import 'profile_details.dart';
 
