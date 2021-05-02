@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/home/floating_action_button.dart';
+import 'package:trips_app/place/ui/widgets/floating_action_button.dart';
 
 class ProfileCardImage extends StatelessWidget {
   ProfileCardImage(this.pathImage, this.name, this.email, this.steps);
