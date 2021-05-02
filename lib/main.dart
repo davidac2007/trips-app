@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/user/bloc/user_bloc.dart';
 
-import 'place/ui/screens/trips.dart';
+import 'trips.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays(
         []); //Make status bar transparent in Android
 
-    return MaterialApp(
-        title: 'Flutter Demo', theme: ThemeData(), home: Trips());
+    return BlocProvider(
+        child: MaterialApp(
+            title: 'Flutter Demo', theme: ThemeData(), home: Trips()),
+        bloc: UserBloc());
   }
 }
