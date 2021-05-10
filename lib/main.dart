@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
-import 'package:trips_app/user/ui/screens/sign_in%20_screen.dart';
+import 'package:trips_app/user/ui/screens/sign_in_screen.dart';
 
 void main() {
   runApp(MyApp());

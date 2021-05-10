@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GreenButton extends StatefulWidget {
-  GreenButton(
+class GoogleButton extends StatefulWidget {
+  GoogleButton(
       {Key key,
       @required this.text,
       @required this.onPressed,
@@ -15,11 +15,11 @@ class GreenButton extends StatefulWidget {
 
   @override
   State createState() {
-    return _GreenButton();
+    return _GoogleButton();
   }
 }
 
-class _GreenButton extends State<GreenButton> {
+class _GoogleButton extends State<GoogleButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
