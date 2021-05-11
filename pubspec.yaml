@@ -30,6 +30,7 @@ dependencies:
   generic_bloc_provider: ^1.1.0
   google_sign_in: ^5.0.2
   firebase: ^9.0.1
+  firebase_auth: ^1.1.3
   font_awesome_flutter: ^9.0.0
 
 dev_dependencies:

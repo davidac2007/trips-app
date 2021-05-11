@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/trips.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
-import 'package:trips_app/user/ui/screens/sign_in%20_screen.dart';
+import 'package:trips_app/user/ui/screens/sign_in_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -20,7 +24,9 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
             title: 'Flutter Demo',
             theme: ThemeData(),
-            home: SignInGoogleScreen()),
+            home:
+                // SignInGoogleScreen()
+                Trips()),
         bloc: UserBloc());
   }
 }
