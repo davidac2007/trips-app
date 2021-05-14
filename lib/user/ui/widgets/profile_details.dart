@@ -8,7 +8,7 @@ class ProfileDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final photo = Container(
-      margin: EdgeInsets.only(top: 50.0, left: 40.0),
+      margin: EdgeInsets.only(top: 50.0),
       width: 80.0,
       height: 80.0,
       decoration: BoxDecoration(
@@ -19,7 +19,7 @@ class ProfileDetails extends StatelessWidget {
     );
 
     final profileDetails = Container(
-        margin: EdgeInsets.only(top: 50.0, left: 20.0),
+        margin: EdgeInsets.only(top: 50.0),
         child: Text.rich(TextSpan(children: [
           TextSpan(
               text: name,
@@ -33,6 +33,8 @@ class ProfileDetails extends StatelessWidget {
 
     return Container(
         alignment: Alignment.center,
-        child: Row(children: [photo, profileDetails]));
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [photo, profileDetails]));
   }
 }

@@ -31,8 +31,8 @@ class ProfileCardImage extends StatelessWidget {
 
     final info = Stack(alignment: Alignment(0.7, 1.0), children: [
       Container(
-          height: 105.0,
-          width: MediaQuery.of(context).size.width * 0.650,
+          height: 120.0,
+          width: MediaQuery.of(context).size.width * 0.680,
           margin:
               EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0, bottom: 10.0),
           decoration: BoxDecoration(
@@ -47,13 +47,11 @@ class ProfileCardImage extends StatelessWidget {
               ]),
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            child: ListView(children: [
               Text(name,
-                  textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontFamily: "Lato",
                       fontWeight: FontWeight.bold)),
               SizedBox(
@@ -68,7 +66,7 @@ class ProfileCardImage extends StatelessWidget {
               Text(steps,
                   style: TextStyle(
                       color: Colors.amber,
-                      fontSize: 14,
+                      fontSize: 12,
                       fontFamily: "Lato",
                       fontWeight: FontWeight.bold)),
             ]),

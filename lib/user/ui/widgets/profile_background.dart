@@ -38,6 +38,7 @@ class ProfileTitle extends StatelessWidget {
     return Container(
         margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               'Profile',
@@ -47,7 +48,6 @@ class ProfileTitle extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 30.0),
             ),
-            SizedBox(width: screenWidth * 0.55),
             Icon(
               Icons.settings,
               color: Colors.grey,
