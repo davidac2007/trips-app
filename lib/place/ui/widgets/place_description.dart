@@ -42,7 +42,7 @@ class DescriptionPlace extends StatelessWidget {
             placeName,
             style: TextStyle(
                 fontFamily: "Lato",
-                fontSize: 30.0,
+                fontSize: 28.0,
                 fontWeight: FontWeight.w900),
             textAlign: TextAlign.left,
           ),
@@ -66,7 +66,7 @@ class DescriptionPlace extends StatelessWidget {
         textAlign: TextAlign.justify,
         style: const TextStyle(
             fontFamily: "Lato",
-            fontSize: 16.0,
+            fontSize: 14.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF56575a)),
       ),

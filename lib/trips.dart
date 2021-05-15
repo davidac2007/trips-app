@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/place/ui/widgets/trips_cupertino.dart';
+// import 'package:trips_app/place/ui/widgets/trips_cupertino.dart';
 import 'package:trips_app/user/ui/screens/profile.dart';
 import 'package:trips_app/place/ui/screens/search_trips.dart';
+import 'package:trips_app/user/ui/screens/sign_in_screen.dart';
 import 'place/ui/screens/home_trips.dart';
 
 class Trips extends StatefulWidget {
@@ -29,7 +30,7 @@ class _TripsState extends State<Trips> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widgetsChildren[indexTap],
-      bottomNavigationBar: TripsCupertino(),
+      bottomNavigationBar: SignInGoogleScreen(),
       // Theme(
       //   data: Theme.of(context)
       //       .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
