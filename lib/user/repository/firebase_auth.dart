@@ -16,4 +16,10 @@ class FirebaseAuthentication {
 
     return user;
   }
+
+  void signOut() async {
+    await _auth.signOut().then((value) => print("Logged out"));
+    _googleAuth.signOut();
+    print("Logged out of all accounts");
+  }
 }

@@ -8,19 +8,14 @@ class ProfileButtons extends StatelessWidget {
         margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          // Change password
           CircleButton(
-            true,
-            Icons.bookmark_border,
-            20.0,
-            Color(0xFFFFFFFF),
-          ),
-          CircleButton(true, Icons.card_travel, 20.0,
-              Color.fromRGBO(255, 255, 255, 0.6)),
+              true, Icons.vpn_key, 20.0, Color.fromRGBO(255, 255, 255, 0.6)),
+          // Add new place
           CircleButton(false, Icons.add, 40.0, Color(0xFFFFFFFF)),
-          CircleButton(true, Icons.mail_rounded, 20.0,
+          // Log outs
+          CircleButton(true, Icons.exit_to_app, 20.0,
               Color.fromRGBO(255, 255, 255, 0.6)),
-          CircleButton(
-              true, Icons.people, 20.0, Color.fromRGBO(255, 255, 255, 0.6))
         ]));
   }
 }
