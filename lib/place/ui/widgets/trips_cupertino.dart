@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/user/bloc/user_bloc.dart';
 
 import 'package:trips_app/user/ui/screens/profile.dart';
 import 'package:trips_app/place/ui/screens/search_trips.dart';
@@ -32,8 +34,12 @@ class TripsCupertino extends StatelessWidget {
                   builder: (BuildContext context) => SearchTrips());
               break;
             case 2:
-              return CupertinoTabView(
-                  builder: (BuildContext context) => Profile());
+              return CupertinoTabView(builder: (BuildContext context) {
+                return BlocProvider<UserBloc>(
+                  bloc: UserBloc(),
+                  child: Profile(),
+                );
+              });
               break;
           }
           return CupertinoTabView(

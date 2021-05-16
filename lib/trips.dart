@@ -30,8 +30,8 @@ class _TripsState extends State<Trips> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widgetsChildren[indexTap],
-      bottomNavigationBar: SignInGoogleScreen(),
-      // Theme(
+      // bottomNavigationBar: SignInGoogleScreen(),
+      // // Theme(
       //   data: Theme.of(context)
       //       .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
       //   child: BottomNavigationBar(

@@ -26,7 +26,10 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
     return StreamBuilder(
         stream: userBloc.authStatus,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (!snapshot.hasData || snapshot.hasError) {
+          if (!snapshot.hasData ||
+              snapshot.hasError ||
+              FirebaseAuth.instance.currentUser == null) {
+            print("Not logged out");
             return signInGoogleUI();
           } else {
             return TripsCupertino();
