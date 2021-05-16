@@ -4,9 +4,9 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
 
 class ProfileButtons extends StatelessWidget {
-  UserBloc userBloc;
   @override
   Widget build(BuildContext context) {
+    UserBloc userBloc;
     userBloc = BlocProvider.of(context);
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 15.0),

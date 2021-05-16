@@ -18,13 +18,13 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    final starBorder = Container(
-      margin: EdgeInsets.only(top: 323.0, right: 3.0),
-      child: Icon(
-        Icons.star_border,
-        color: Color(0xFFf2C611),
-      ),
-    );
+    // final starBorder = Container(
+    //   margin: EdgeInsets.only(top: 323.0, right: 3.0),
+    //   child: Icon(
+    //     Icons.star_border,
+    //     color: Color(0xFFf2C611),
+    //   ),
+    // );
 
     final star = Container(
       margin: EdgeInsets.only(top: 323.0, right: 3.0),
@@ -52,8 +52,8 @@ class DescriptionPlace extends StatelessWidget {
             star,
             star,
             star,
+            star,
             halfStar,
-            starBorder,
           ],
         )
       ],

@@ -48,8 +48,9 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
             children: <Widget>[
               Text(
                 "Welcome \n This is your Travel App",
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 37.0,
+                    fontSize: 36.0,
                     fontFamily: "Lato",
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
