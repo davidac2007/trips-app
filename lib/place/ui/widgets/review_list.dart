@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:trips_app/place/ui/widgets/review.dart';
 
@@ -8,14 +9,14 @@ class ReviewList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Review(
-          "assets/img/people.jpg",
+          "https://avatars.githubusercontent.com/u/1071625?v=4",
           "Varuna Yasas",
           "1 review - 5 photos",
           "There is an amazing place in Sri Lanka",
         ),
         Review(
-          "assets/img/Me.jpg",
-          "David Avendaño",
+          FirebaseAuth.instance.currentUser.photoURL,
+          FirebaseAuth.instance.currentUser.displayName,
           "2 reviews- 8 photos",
           "There is an amazing place in Mexico",
         ),

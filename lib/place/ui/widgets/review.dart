@@ -62,9 +62,13 @@ class Review extends StatelessWidget {
       width: 80.0,
       height: 80.0,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image:
-              DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover)),
+        shape: BoxShape.circle,
+      ),
+      child: CircleAvatar(
+        radius: 30.0,
+        backgroundImage: NetworkImage(imagePath),
+        backgroundColor: Colors.transparent,
+      ),
     );
     return Row(
       children: <Widget>[

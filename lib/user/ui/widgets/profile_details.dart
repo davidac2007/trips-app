@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:trips_app/user/repository/firebase_auth.dart';
 
 class ProfileDetails extends StatelessWidget {
   ProfileDetails(this.imagePath, this.name, this.email);
@@ -8,15 +10,19 @@ class ProfileDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final photo = Container(
-      margin: EdgeInsets.only(top: 50.0),
-      width: 80.0,
-      height: 80.0,
-      decoration: BoxDecoration(
+        margin: EdgeInsets.only(top: 50.0),
+        width: 80.0,
+        height: 80.0,
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(width: 2, color: Colors.white),
-          image:
-              DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover)),
-    );
+        ),
+        child: CircleAvatar(
+          radius: 30.0,
+          backgroundImage:
+              NetworkImage(FirebaseAuth.instance.currentUser.photoURL),
+          backgroundColor: Colors.transparent,
+        ));
 
     final profileDetails = Container(
         margin: EdgeInsets.only(top: 50.0),
