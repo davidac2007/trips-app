@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:trips_app/user/repository/firebase_auth.dart';
 
 class ProfileDetails extends StatelessWidget {
   ProfileDetails(this.imagePath, this.name, this.email);
@@ -40,7 +39,7 @@ class ProfileDetails extends StatelessWidget {
     return Container(
         alignment: Alignment.center,
         child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [photo, profileDetails]));
   }
 }
