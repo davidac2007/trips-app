@@ -58,8 +58,10 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
               GoogleButton(
                 text: "Sign in with Google",
                 onPressed: () {
-                  userBloc.signIn().then((UserCredential user) =>
-                      print("User is ${user.user.displayName}"));
+                  try {
+                    userBloc.signIn().then((UserCredential user) =>
+                        print("User is ${user.user.displayName}"));
+                  } catch (e) {}
                 },
                 width: 300.0,
                 height: 50.0,

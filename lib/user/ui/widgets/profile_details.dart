@@ -1,11 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:trips_app/user/model/user.dart';
 
 class ProfileDetails extends StatelessWidget {
-  ProfileDetails(this.imagePath, this.name, this.email);
-  final String imagePath;
-  final String name;
-  final String email;
+  final UserModel user;
+  ProfileDetails(this.user);
+
   @override
   Widget build(BuildContext context) {
     final photo = Container(
@@ -18,8 +17,7 @@ class ProfileDetails extends StatelessWidget {
         ),
         child: CircleAvatar(
           radius: 30.0,
-          backgroundImage:
-              NetworkImage(FirebaseAuth.instance.currentUser.photoURL),
+          backgroundImage: NetworkImage(user.photoURL),
           backgroundColor: Colors.transparent,
         ));
 
@@ -27,11 +25,11 @@ class ProfileDetails extends StatelessWidget {
         margin: EdgeInsets.only(top: 50.0),
         child: Text.rich(TextSpan(children: [
           TextSpan(
-              text: name,
+              text: "${user.name} \n",
               style: TextStyle(
                   color: Colors.white, fontSize: 16, fontFamily: "Lato")),
           TextSpan(
-              text: email,
+              text: user.email,
               style: TextStyle(
                   color: Colors.white24, fontSize: 16, fontFamily: "Lato"))
         ])));
