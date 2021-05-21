@@ -1,8 +1,13 @@
-class Place {
-  String name;
-  String where;
-  String type;
-  String steps;
+import 'package:trips_app/user/model/user.dart';
 
-  Place(this.name, this.where, this.type, this.steps);
+class PlaceModel {
+  String id;
+  String name;
+  String description;
+  String uriImage;
+  int likes;
+  UserModel userOwner;
+
+  PlaceModel(this.id, this.name, this.description, this.likes, this.uriImage,
+      this.userOwner);
 }
