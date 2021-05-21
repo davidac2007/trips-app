@@ -18,12 +18,14 @@ class ProfileCardImageList extends StatelessWidget {
               "assets/img/mountainsk.jpeg",
               "Knuckles Mountains Range",
               "Hiking. Water fall hunting. Natural bath, Scenery & Photography",
-              "Steps 123,123,123"),
+              "Steps 123,123,123",
+              null),
           ProfileCardImage(
               "assets/img/mountain.jpeg",
               "Mountains",
               "Hiking. Water fall hunting. Natural bath, Scenery & Photography",
-              "Steps 321,321,321"),
+              "Steps 321,321,321",
+              null),
           SizedBox(height: 30.0)
         ],
       ),

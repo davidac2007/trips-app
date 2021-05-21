@@ -7,6 +7,9 @@ import 'package:trips_app/user/ui/widgets/profile_buttons.dart';
 import 'package:trips_app/user/ui/widgets/profile_details.dart';
 
 class ProfileAppBar extends StatelessWidget {
+ 
+  
+
   @override
   Widget build(BuildContext context) {
     final UserBloc userBloc = BlocProvider.of<UserBloc>(context);
@@ -30,6 +33,7 @@ class ProfileAppBar extends StatelessWidget {
   }
 
   Widget showProfileData(AsyncSnapshot snapshot) {
+    
     if (!snapshot.hasData || snapshot.hasError) {
       print("Not logged in");
       return Column(children: [
@@ -38,7 +42,7 @@ class ProfileAppBar extends StatelessWidget {
       ]);
     } else {
       print(snapshot.data);
-      final user = UserModel(snapshot.data.displayName, snapshot.data.email,
+      final user = UserModel(snapshot.data., snapshot.data.email,
           snapshot.data.photoURL);
       print("Logged in");
       return Column(

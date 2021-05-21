@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/place/ui/widgets/floating_action_button.dart';
+import 'package:trips_app/place/model/place.dart';
 
 class ProfileCardImage extends StatelessWidget {
-  ProfileCardImage(this.pathImage, this.name, this.email, this.steps);
+  ProfileCardImage(
+      this.pathImage, this.name, this.descrption, this.steps, this.place);
   final String pathImage;
   final String name;
-  final String email;
+  final String descrption;
   final String steps;
+  final PlaceModel place;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class ProfileCardImage extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
             child: ListView(children: [
-              Text(name,
+              Text(this.place.name,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
@@ -57,13 +60,13 @@ class ProfileCardImage extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              Text(email,
+              Text(this.place.description,
                   style: TextStyle(
                       color: Colors.grey, fontSize: 12, fontFamily: "Lato")),
               SizedBox(
                 height: 10,
               ),
-              Text(steps,
+              Text('${this.place.likes}',
                   style: TextStyle(
                       color: Colors.amber,
                       fontSize: 12,

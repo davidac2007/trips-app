@@ -9,5 +9,14 @@ class CloudFirestoreDB {
 
   void updateUserData(UserModel user) async {
     DocumentReference ref = _db.collection(users).doc(user.uid);
+    return ref.set({
+      'uid': user.uid,
+      'name': user.name,
+      'email': user.email,
+      'photoURL': user.photoURL,
+      'myPlaces': user.myPlaces,
+      'myFavoritePlaces': user.myFavPlaces,
+      'lastSignIn': DateTime.now()
+    }, SetOptions(merge: true));
   }
 }

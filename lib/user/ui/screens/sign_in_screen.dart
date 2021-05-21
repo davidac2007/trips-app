@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/place/ui/widgets/gradient_back.dart';
 import 'package:trips_app/place/ui/widgets/trips_cupertino.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
+import 'package:trips_app/user/model/user.dart';
 import 'package:trips_app/user/ui/widgets/google_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -57,14 +59,22 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
               ),
               GoogleButton(
                 text: "Sign in with Google",
-                onPressed: () {
-                  try {
-                    userBloc.signIn().then((UserCredential user) =>
-                        print("User is ${user.user.displayName}"));
-                  } catch (e) {}
-                },
                 width: 300.0,
                 height: 50.0,
+                onPressed: () {
+                  try {
+                    userBloc.signIn().then((UserCredential user) {
+                      final _user = user.user;
+                      userBloc.updateUserData(UserModel(
+                          _user.uid,
+                          _user.displayName,
+                          _user.email,
+                          _user.photoURL,
+                          null,
+                          null));
+                    });
+                  } catch (e) {}
+                },
               )
             ],
           )
