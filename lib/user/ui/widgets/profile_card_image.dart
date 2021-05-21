@@ -3,12 +3,8 @@ import 'package:trips_app/place/ui/widgets/floating_action_button.dart';
 import 'package:trips_app/place/model/place.dart';
 
 class ProfileCardImage extends StatelessWidget {
-  ProfileCardImage(
-      this.pathImage, this.name, this.descrption, this.steps, this.place);
-  final String pathImage;
-  final String name;
-  final String descrption;
-  final String steps;
+  ProfileCardImage(this.place);
+
   final PlaceModel place;
 
   @override
@@ -20,7 +16,7 @@ class ProfileCardImage extends StatelessWidget {
         margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(pathImage), fit: BoxFit.cover),
+                image: NetworkImage(place.uriImage), fit: BoxFit.cover),
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
             shape: BoxShape.rectangle,
             boxShadow: <BoxShadow>[
@@ -51,25 +47,25 @@ class ProfileCardImage extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
             child: ListView(children: [
-              Text(this.place.name,
+              Text(place.name,
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: 18,
                       fontFamily: "Lato",
                       fontWeight: FontWeight.bold)),
               SizedBox(
                 height: 5,
               ),
-              Text(this.place.description,
+              Text(place.description,
                   style: TextStyle(
-                      color: Colors.grey, fontSize: 12, fontFamily: "Lato")),
+                      color: Colors.grey, fontSize: 16, fontFamily: "Lato")),
               SizedBox(
                 height: 10,
               ),
-              Text('${this.place.likes}',
+              Text('${place.likes} likes',
                   style: TextStyle(
                       color: Colors.amber,
-                      fontSize: 12,
+                      fontSize: 14,
                       fontFamily: "Lato",
                       fontWeight: FontWeight.bold)),
             ]),

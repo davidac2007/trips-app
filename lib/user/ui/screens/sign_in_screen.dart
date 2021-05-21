@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/place/ui/widgets/gradient_back.dart';
 import 'package:trips_app/place/ui/widgets/trips_cupertino.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
