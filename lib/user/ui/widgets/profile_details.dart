@@ -31,13 +31,14 @@ class ProfileDetails extends StatelessWidget {
           TextSpan(
               text: user.email,
               style: TextStyle(
-                  color: Colors.white24, fontSize: 16, fontFamily: "Lato"))
+                  color: Colors.white24, fontSize: 14, fontFamily: "Lato"))
         ])));
 
     return Container(
         alignment: Alignment.center,
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [photo, profileDetails]));
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Flexible(child: photo),
+          Flexible(child: profileDetails)
+        ]));
   }
 }
