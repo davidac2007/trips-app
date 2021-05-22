@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:trips_app/place/ui/widgets/gradient_back.dart';
 import 'package:trips_app/place/ui/widgets/trips_cupertino.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
 import 'package:trips_app/user/model/user.dart';
 import 'package:trips_app/user/ui/widgets/google_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:trips_app/user/ui/widgets/profile_background.dart';
 
 class SignInGoogleScreen extends StatefulWidget {
   @override
@@ -39,11 +39,12 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
   }
 
   Widget signInGoogleUI() {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          GradientBack("", null),
+          ProfileBackground(screenHeight * 120),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
