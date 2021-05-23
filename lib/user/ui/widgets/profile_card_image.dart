@@ -11,7 +11,7 @@ class ProfileCardImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final image = Stack(alignment: Alignment(0.0, 0.8), children: [
       Container(
-        height: 200.0,
+        height: 250.0,
         width: double.infinity,
         margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
         decoration: BoxDecoration(
@@ -30,10 +30,10 @@ class ProfileCardImage extends StatelessWidget {
 
     final info = Stack(alignment: Alignment(0.7, 1.0), children: [
       Container(
-          height: 120.0,
-          width: MediaQuery.of(context).size.width * 0.680,
+          height: MediaQuery.of(context).size.height * 0.160,
+          width: MediaQuery.of(context).size.width * 0.685,
           margin:
-              EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0, bottom: 10.0),
+              EdgeInsets.only(top: 20.0, left: 10.0, right: 20.0, bottom: 10.0),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -45,30 +45,34 @@ class ProfileCardImage extends StatelessWidget {
                     offset: Offset(0.0, 7.0))
               ]),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-            child: ListView(children: [
-              Text(place.name,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontFamily: "Lato",
-                      fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 5,
-              ),
-              Text(place.description,
-                  style: TextStyle(
-                      color: Colors.grey, fontSize: 16, fontFamily: "Lato")),
-              SizedBox(
-                height: 10,
-              ),
-              Text('${place.likes} likes',
-                  style: TextStyle(
-                      color: Colors.amber,
-                      fontSize: 14,
-                      fontFamily: "Lato",
-                      fontWeight: FontWeight.bold)),
-            ]),
+            padding: EdgeInsets.only(
+                left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Flexible(
+                    child: Text(place.name,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: "Lato",
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  Text(place.description,
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                          fontFamily: "Lato")),
+                  Flexible(
+                    child: Text('${place.likes} likes',
+                        style: TextStyle(
+                            color: Colors.amber,
+                            fontSize: 12,
+                            fontFamily: "Lato",
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ]),
           )),
       FloatingActionButtonGreen()
     ]);

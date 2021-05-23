@@ -48,14 +48,16 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "Welcome \n This is your Travel App",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 36.0,
-                    fontFamily: "Lato",
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+              Flexible(
+                child: Text(
+                  "Welcome \n This is your Travel App",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 36.0,
+                      fontFamily: "Lato",
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               GoogleButton(
                 text: "Sign in with Google",

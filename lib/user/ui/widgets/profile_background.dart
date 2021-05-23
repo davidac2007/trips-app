@@ -37,7 +37,7 @@ class ProfileTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
+        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

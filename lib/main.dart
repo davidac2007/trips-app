@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
 
     return BlocProvider(
         child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(),
             home:

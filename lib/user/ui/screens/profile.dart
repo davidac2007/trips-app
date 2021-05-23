@@ -10,7 +10,7 @@ class Profile extends StatelessWidget {
     return Stack(
         // alignment: Alignment.center,
         children: [
-          ProfileBackground(screenHeight * 0.45),
+          ProfileBackground(screenHeight * 0.50),
           ProfileCardImageList()
         ]);
   }
