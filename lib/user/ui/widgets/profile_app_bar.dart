@@ -16,9 +16,9 @@ class ProfileAppBar extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return CircularProgressIndicator();
+            return showProfileData(snapshot);
           case ConnectionState.none:
-            return CircularProgressIndicator();
+            return showProfileData(snapshot);
           case ConnectionState.active:
             return showProfileData(snapshot);
           case ConnectionState.done:
@@ -32,10 +32,12 @@ class ProfileAppBar extends StatelessWidget {
   Widget showProfileData(AsyncSnapshot snapshot) {
     if (!snapshot.hasData || snapshot.hasError) {
       print("Not logged in");
-      return Column(children: [
-        CircularProgressIndicator(),
-        Text("Couldn't get the data. Please log in")
-      ]);
+      return Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CircularProgressIndicator(),
+            Text("Couldn't get the data. Please log in")
+          ]);
     } else {
       print(snapshot.data);
       final user = UserModel(snapshot.data.uid, snapshot.data.displayName,
