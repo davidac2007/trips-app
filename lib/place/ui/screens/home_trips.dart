@@ -15,7 +15,7 @@ class HomeTrips extends StatelessWidget {
       children: <Widget>[
         ListView(
           children: <Widget>[
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             DescriptionPlace("Bahamas", 3, randomDescription),
             ReviewList()
           ],
