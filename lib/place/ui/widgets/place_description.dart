@@ -66,7 +66,7 @@ class DescriptionPlace extends StatelessWidget {
         textAlign: TextAlign.justify,
         style: const TextStyle(
             fontFamily: "Lato",
-            fontSize: 14.0,
+            fontSize: 16.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF56575a)),
       ),

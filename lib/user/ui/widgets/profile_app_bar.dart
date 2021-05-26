@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
 import 'package:trips_app/user/model/user.dart';
-import 'package:trips_app/user/ui/widgets/profile_background.dart';
 import 'package:trips_app/user/ui/widgets/profile_buttons.dart';
 import 'package:trips_app/user/ui/widgets/profile_details.dart';
 
@@ -45,7 +44,6 @@ class ProfileAppBar extends StatelessWidget {
       print("Logged in");
       return Column(
         children: [
-          ProfileTitle(),
           ProfileDetails(user),
           ProfileButtons(),
         ],

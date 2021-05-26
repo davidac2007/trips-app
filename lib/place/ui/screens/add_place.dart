@@ -18,7 +18,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          ProfileBackground(300.0),
+          GradientBackk(300.0, ""),
           Row(
             children: [
               Container(
