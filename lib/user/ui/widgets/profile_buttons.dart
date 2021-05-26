@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/place/ui/screens/add_place.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
 
 class ProfileButtons extends StatelessWidget {
@@ -16,7 +19,13 @@ class ProfileButtons extends StatelessWidget {
           CircleButton(true, Icons.vpn_key, 20.0,
               Color.fromRGBO(255, 255, 255, 0.6), () => {}),
           // Add new place
-          CircleButton(false, Icons.add, 40.0, Color(0xFFFFFFFF), () => {}),
+          CircleButton(false, Icons.add, 40.0, Color(0xFFFFFFFF), () {
+            File image;
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AddPlaceScreen(image)));
+          }),
           // Log out
           CircleButton(
               true,
@@ -56,6 +65,7 @@ class _CircleButton extends State<CircleButton> {
         size: widget.iconSize,
         color: Color(0xFF4268D3),
       ),
+      heroTag: null,
     ));
   }
 }
