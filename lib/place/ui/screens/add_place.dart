@@ -18,11 +18,11 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          GradientBackk(300.0, ""),
+          GradientBackk(300.0, "Add new place", 60.0),
           Row(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 25.0, left: 5.0),
+                padding: EdgeInsets.only(top: 28.0, left: 5.0),
                 child: SizedBox(
                   height: 45.0,
                   width: 45.0,

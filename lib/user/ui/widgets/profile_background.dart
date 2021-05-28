@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class GradientBackk extends StatelessWidget {
   final double height;
   final String title;
-  GradientBackk(this.height, this.title);
+  final double align;
+  GradientBackk(this.height, this.title, this.align);
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -33,7 +34,7 @@ class GradientBackk extends StatelessWidget {
         ),
       ),
       Container(
-          margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 35.0),
+          margin: EdgeInsets.only(left: align, right: 20.0, top: 35.0),
           child: Text(
             title,
             style: TextStyle(

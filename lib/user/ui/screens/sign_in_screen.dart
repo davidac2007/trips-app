@@ -44,7 +44,7 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          GradientBackk(screenHeight * 120, ""),
+          GradientBackk(screenHeight * 120, "", 20.0),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
