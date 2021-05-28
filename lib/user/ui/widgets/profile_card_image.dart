@@ -68,7 +68,7 @@ class ProfileCardImage extends StatelessWidget {
                     child: Text('${place.likes} likes',
                         style: TextStyle(
                             color: Colors.amber,
-                            fontSize: 12,
+                            fontSize: 14,
                             fontFamily: "Lato",
                             fontWeight: FontWeight.bold)),
                   ),

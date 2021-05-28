@@ -12,7 +12,7 @@ class ProfileButtons extends StatelessWidget {
     UserBloc userBloc;
     userBloc = BlocProvider.of(context);
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 30.0),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           // Change password
