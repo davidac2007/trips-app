@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:trips_app/user/ui/widgets/profile_background.dart';
+import 'package:trips_app/widgets/title_header.dart';
 
 class AddPlaceScreen extends StatefulWidget {
   final File image;
@@ -18,7 +19,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          GradientBackk(300.0, "Add new place", 60.0),
+          GradientBackk(300.0, "", 60.0),
           Row(
             children: [
               Container(
@@ -36,6 +37,12 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       Navigator.pop(context);
                     },
                   ),
+                ),
+              ),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.only(top: 45.0, left: 20.0, right: 10.0),
+                  child: TitleHeader("Add new place"),
                 ),
               )
             ],
