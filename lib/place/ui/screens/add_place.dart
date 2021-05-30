@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:trips_app/user/ui/widgets/profile_background.dart';
+import 'package:trips_app/widgets/text_input.dart';
 import 'package:trips_app/widgets/title_header.dart';
 
 class AddPlaceScreen extends StatefulWidget {
@@ -16,6 +17,9 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
+    final _controllerPlaceTitle = TextEditingController();
+    final _controllerPlaceDescription = TextEditingController();
+
     return Scaffold(
       body: Stack(
         children: [
@@ -46,6 +50,19 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 ),
               )
             ],
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 120.0, bottom: 20.0),
+            child: ListView(
+              children: [
+                Container(),
+                Container(
+                    margin: EdgeInsets.only(bottom: 20.0),
+                    child: TextInput("Title", null, _controllerPlaceTitle, 1)),
+                TextInput("Description", TextInputType.multiline,
+                    _controllerPlaceDescription, 4)
+              ],
+            ),
           )
         ],
       ),
