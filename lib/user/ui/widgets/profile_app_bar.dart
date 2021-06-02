@@ -39,12 +39,17 @@ class ProfileAppBar extends StatelessWidget {
           ]);
     } else {
       print(snapshot.data);
-      final user = UserModel(snapshot.data.uid, snapshot.data.displayName,
-          snapshot.data.email, snapshot.data.photoURL, null, null);
+      final user = UserModel(
+          uid: snapshot.data.uid,
+          name: snapshot.data.displayName,
+          email: snapshot.data.email,
+          photoURL: snapshot.data.photoURL,
+          myPlaces: null,
+          myFavPlaces: null);
       print("Logged in");
       return Column(
         children: [
-          ProfileDetails(user),
+          ProfileDetails(user: user),
           ProfileButtons(),
         ],
       );

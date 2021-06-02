@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'floating_action_button.dart';
 
 class CardImage extends StatelessWidget {
-  CardImage(this.pathImage);
+  CardImage({this.pathImage});
   final String pathImage;
 
   @override

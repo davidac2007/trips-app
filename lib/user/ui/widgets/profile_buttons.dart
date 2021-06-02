@@ -16,23 +16,34 @@ class ProfileButtons extends StatelessWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           // Change password
-          CircleButton(true, Icons.vpn_key, 20.0,
-              Color.fromRGBO(255, 255, 255, 0.6), () => {}),
+          CircleButton(
+              mini: true,
+              icon: Icons.vpn_key,
+              iconSize: 20.0,
+              color: Color.fromRGBO(255, 255, 255, 0.6),
+              onPressed: () => {}),
           // Add new place
-          CircleButton(false, Icons.add, 40.0, Color(0xFFFFFFFF), () {
-            File image;
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => AddPlaceScreen(image)));
-          }),
+          CircleButton(
+              mini: false,
+              icon: Icons.add,
+              iconSize: 40.0,
+              color: Color(0xFFFFFFFF),
+              onPressed: () {
+                File image;
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            AddPlaceScreen(image: image)));
+              }),
           // Log out
           CircleButton(
-              true,
-              Icons.exit_to_app,
-              20.0,
-              Color.fromRGBO(255, 255, 255, 0.6),
-              () => {FirebaseAuth.instance.signOut(), userBloc.signOut()}),
+              mini: true,
+              icon: Icons.exit_to_app,
+              iconSize: 20.0,
+              color: Color.fromRGBO(255, 255, 255, 0.6),
+              onPressed: () =>
+                  {FirebaseAuth.instance.signOut(), userBloc.signOut()}),
         ]));
   }
 }
@@ -44,7 +55,8 @@ class CircleButton extends StatefulWidget {
   final double iconSize;
   final Color color;
 
-  CircleButton(this.mini, this.icon, this.iconSize, this.color, this.onPressed);
+  CircleButton(
+      {this.mini, this.icon, this.iconSize, this.color, this.onPressed});
 
   @override
   State<StatefulWidget> createState() {

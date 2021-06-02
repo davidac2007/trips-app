@@ -10,7 +10,8 @@ class Profile extends StatelessWidget {
     return Stack(
         // alignment: Alignment.center,
         children: [
-          GradientBackk(screenHeight * 0.50, "Profile", 20.0),
+          GradientBackk(
+              height: screenHeight * 0.50, title: "Profile", align: 20.0),
           ProfileCardImageList()
         ]);
   }

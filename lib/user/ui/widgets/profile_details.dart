@@ -3,7 +3,7 @@ import 'package:trips_app/user/model/user.dart';
 
 class ProfileDetails extends StatelessWidget {
   final UserModel user;
-  ProfileDetails(this.user);
+  ProfileDetails({this.user});
 
   @override
   Widget build(BuildContext context) {

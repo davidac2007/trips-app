@@ -3,7 +3,7 @@ import 'package:trips_app/place/ui/widgets/floating_action_button.dart';
 import 'package:trips_app/place/model/place.dart';
 
 class ProfileCardImage extends StatelessWidget {
-  ProfileCardImage(this.place);
+  ProfileCardImage({this.place});
 
   final PlaceModel place;
 

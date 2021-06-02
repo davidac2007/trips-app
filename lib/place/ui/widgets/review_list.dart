@@ -9,16 +9,16 @@ class ReviewList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Review(
-          "https://avatars.githubusercontent.com/u/1071625?v=4",
-          "Varuna Yasas",
-          "1 review - 5 photos",
-          "There is an amazing place in Sri Lanka",
+          imagePath: "https://avatars.githubusercontent.com/u/1071625?v=4",
+          name: "Varuna Yasas",
+          details: "1 review - 5 photos",
+          comments: "There is an amazing place in Sri Lanka",
         ),
         Review(
-          FirebaseAuth.instance.currentUser.photoURL,
-          FirebaseAuth.instance.currentUser.displayName,
-          "2 reviews- 8 photos",
-          "There is an amazing place in Mexico",
+          imagePath: FirebaseAuth.instance.currentUser.photoURL,
+          name: FirebaseAuth.instance.currentUser.displayName,
+          details: "2 reviews- 8 photos",
+          comments: "There is an amazing place in Mexico",
         ),
         // Review(
         //   "assets/img/sophie.jpg",

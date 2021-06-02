@@ -44,7 +44,7 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          GradientBackk(screenHeight * 120, "", 20.0),
+          GradientBackk(height: screenHeight * 120, title: "", align: 20.0),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -68,12 +68,12 @@ class _SignInGoogleScreen extends State<SignInGoogleScreen> {
                     userBloc.signIn().then((UserCredential user) {
                       final _user = user.user;
                       userBloc.updateUserData(UserModel(
-                          _user.uid,
-                          _user.displayName,
-                          _user.email,
-                          _user.photoURL,
-                          null,
-                          null));
+                          uid: _user.uid,
+                          name: _user.displayName,
+                          email: _user.email,
+                          photoURL: _user.photoURL,
+                          myPlaces: null,
+                          myFavPlaces: null));
                     });
                   } catch (e) {}
                 },

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'button.dart';
 
 class DescriptionPlace extends StatelessWidget {
-  DescriptionPlace(this.placeName, this.stars, this.placeDescription);
+  DescriptionPlace({this.placeName, this.stars, this.placeDescription});
   final String placeName;
   final int stars;
   final String placeDescription;
@@ -76,7 +76,11 @@ class DescriptionPlace extends StatelessWidget {
       margin: EdgeInsets.only(top: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[titleStars, description, Button("Navigate")],
+        children: <Widget>[
+          titleStars,
+          description,
+          Button(buttonText: "Navigate")
+        ],
       ),
     );
   }

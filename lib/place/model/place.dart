@@ -8,6 +8,11 @@ class PlaceModel {
   int likes;
   UserModel userOwner;
 
-  PlaceModel(this.id, this.name, this.description, this.likes, this.uriImage,
-      this.userOwner);
+  PlaceModel(
+      {this.id,
+      this.name,
+      this.description,
+      this.likes,
+      this.uriImage,
+      this.userOwner});
 }

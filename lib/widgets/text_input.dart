@@ -6,7 +6,7 @@ class TextInput extends StatelessWidget {
   final TextEditingController controller;
   final int maxLines;
 
-  TextInput(this.hintText, this.inputType, this.controller, this.maxLines);
+  TextInput({this.hintText, this.inputType, this.controller, this.maxLines});
 
   @override
   Widget build(BuildContext context) {

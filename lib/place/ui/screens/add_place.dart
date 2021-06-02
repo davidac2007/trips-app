@@ -8,7 +8,7 @@ import 'package:trips_app/widgets/title_header.dart';
 class AddPlaceScreen extends StatefulWidget {
   final File image;
 
-  AddPlaceScreen(this.image);
+  AddPlaceScreen({this.image});
 
   @override
   _AddPlaceScreenState createState() => _AddPlaceScreenState();
@@ -23,7 +23,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          GradientBackk(300.0, "", 60.0),
+          GradientBackk(height: 300.0, title: "", align: 60.0),
           Row(
             children: [
               Container(
@@ -46,7 +46,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
               Flexible(
                 child: Container(
                   padding: EdgeInsets.only(top: 45.0, left: 20.0, right: 10.0),
-                  child: TitleHeader("Add new place"),
+                  child: TitleHeader(title: "Add new place"),
                 ),
               )
             ],
@@ -58,9 +58,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 Container(),
                 Container(
                     margin: EdgeInsets.only(bottom: 20.0),
-                    child: TextInput("Title", null, _controllerPlaceTitle, 1)),
-                TextInput("Description", TextInputType.multiline,
-                    _controllerPlaceDescription, 4)
+                    child: TextInput(
+                        hintText: "Title",
+                        inputType: null,
+                        controller: _controllerPlaceTitle,
+                        maxLines: 1)),
+                TextInput(
+                    hintText: "Description",
+                    inputType: TextInputType.multiline,
+                    controller: _controllerPlaceDescription,
+                    maxLines: 4)
               ],
             ),
           )

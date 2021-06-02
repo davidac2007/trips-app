@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Review extends StatelessWidget {
-  Review(this.imagePath, this.name, this.details, this.comments);
+  Review({this.imagePath, this.name, this.details, this.comments});
 
   final String imagePath;
   final String name;

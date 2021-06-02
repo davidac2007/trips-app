@@ -8,6 +8,11 @@ class UserModel {
   final List<PlaceModel> myPlaces;
   final List<PlaceModel> myFavPlaces;
 
-  UserModel(this.uid, this.name, this.email, this.photoURL, this.myPlaces,
-      this.myFavPlaces);
+  UserModel(
+      {this.uid,
+      this.name,
+      this.email,
+      this.photoURL,
+      this.myPlaces,
+      this.myFavPlaces});
 }

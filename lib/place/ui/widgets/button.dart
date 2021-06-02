@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  Button(this.buttonText);
+  Button({this.buttonText});
   final String buttonText;
   @override
   Widget build(BuildContext context) {

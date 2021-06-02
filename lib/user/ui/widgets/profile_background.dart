@@ -4,7 +4,7 @@ class GradientBackk extends StatelessWidget {
   final double height;
   final String title;
   final double align;
-  GradientBackk(this.height, this.title, this.align);
+  GradientBackk({this.height, this.title, this.align});
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -46,29 +46,3 @@ class GradientBackk extends StatelessWidget {
     ]);
   }
 }
-
-// class ProfileTitle extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
-//         child: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             Text(
-//               'Profile',
-//               style: TextStyle(
-//                   fontFamily: 'Lato',
-//                   color: Colors.white,
-//                   fontWeight: FontWeight.bold,
-//                   fontSize: 30.0),
-//             ),
-//             Icon(
-//               Icons.settings,
-//               color: Colors.grey,
-//               size: 22,
-//             )
-//           ],
-//         ));
-//   }
-// }
