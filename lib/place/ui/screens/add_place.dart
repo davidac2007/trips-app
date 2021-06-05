@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:trips_app/place/ui/widgets/card_image.dart';
+import 'package:trips_app/place/ui/widgets/tlocation_input.dart';
 import 'package:trips_app/user/ui/widgets/profile_background.dart';
 import 'package:trips_app/widgets/text_input.dart';
 import 'package:trips_app/widgets/title_header.dart';
@@ -55,7 +57,8 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             margin: EdgeInsets.only(top: 120.0, bottom: 20.0),
             child: ListView(
               children: [
-                Container(),
+                // Container(),
+
                 Container(
                     margin: EdgeInsets.only(bottom: 20.0),
                     child: TextInput(
@@ -67,7 +70,14 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                     hintText: "Description",
                     inputType: TextInputType.multiline,
                     controller: _controllerPlaceDescription,
-                    maxLines: 4)
+                    maxLines: 4),
+                Container(
+                  margin: EdgeInsets.only(top: 20.0),
+                  child: LocationInput(
+                    hintText: "Add location",
+                    icon: Icons.location_on_outlined,
+                  ),
+                )
               ],
             ),
           )
