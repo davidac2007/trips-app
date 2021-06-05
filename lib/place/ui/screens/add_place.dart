@@ -54,13 +54,18 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             ],
           ),
           Container(
-            margin: EdgeInsets.only(top: 120.0, bottom: 20.0),
+            margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
             child: ListView(
               children: [
-                // Container(),
-
                 Container(
-                    margin: EdgeInsets.only(bottom: 20.0),
+                  alignment: Alignment.center,
+                  child: CardImage(
+                    pathImage: "assets/img/beach.jpeg",
+                    iconData: Icons.camera_alt_outlined,
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(bottom: 20.0, top: 30.0),
                     child: TextInput(
                         hintText: "Title",
                         inputType: null,

@@ -3,9 +3,21 @@ import 'package:flutter/material.dart';
 import 'floating_action_button.dart';
 
 class CardImage extends StatelessWidget {
-  CardImage({this.pathImage});
   final String pathImage;
+  final double height;
+  final double width;
+  final double left;
+  final VoidCallback onPressedFabIcon;
+  final IconData iconData;
 
+  CardImage({
+    this.pathImage,
+    this.height,
+    this.width,
+    this.left,
+    this.iconData,
+    this.onPressedFabIcon,
+  });
   @override
   Widget build(BuildContext context) {
     final card = Container(
