@@ -60,6 +60,9 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: CardImage(
+                    height: 320,
+                    width: 380,
+                    left: 0.0,
                     pathImage: "assets/img/beach.jpeg",
                     iconData: Icons.camera_alt_outlined,
                   ),
