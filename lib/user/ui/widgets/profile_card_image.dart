@@ -74,7 +74,9 @@ class ProfileCardImage extends StatelessWidget {
                   ),
                 ]),
           )),
-      FloatingActionButtonGreen()
+      FloatingActionButtonGreen(
+        iconData: Icons.favorite_border,
+      )
     ]);
 
     return Column(

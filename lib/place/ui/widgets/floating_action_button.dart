@@ -12,12 +12,13 @@ class FloatingActionButtonGreen extends StatefulWidget {
 
 class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen> {
   bool fav = false;
-  Icon notFavorite = Icon(
+  Icon iconData = Icon(
     Icons.favorite_border,
   );
   Icon inFavorite = Icon(
     Icons.favorite,
   );
+
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -25,7 +26,7 @@ class _FloatingActionButtonGreenState extends State<FloatingActionButtonGreen> {
         backgroundColor: Color(0xFF11DA53),
         mini: true,
         tooltip: "Favorite",
-        child: fav ? inFavorite : notFavorite,
+        child: Icon(widget.iconData),
         onPressed: widget.onPressed);
   }
 

@@ -21,10 +21,10 @@ class ReviewList extends StatelessWidget {
           comments: "There is an amazing place in Mexico",
         ),
         // Review(
-        //   "assets/img/sophie.jpg",
-        //   "Sofía Radillo",
-        //   "10 reviews- 3 photos",
-        //   "There is an amazing place in USA",
+        //   imagePath: "assets/img/sophie.jpg",
+        //   name: "Sofía Radillo",
+        //   details: "10 reviews- 3 photos",
+        //   comments: "There is an amazing place in USA",
         // )
       ],
     );
