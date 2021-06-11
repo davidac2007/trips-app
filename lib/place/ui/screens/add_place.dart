@@ -1,9 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/place/ui/widgets/button.dart';
 import 'package:trips_app/place/ui/widgets/card_image.dart';
 import 'package:trips_app/place/ui/widgets/tlocation_input.dart';
+import 'package:trips_app/user/bloc/user_bloc.dart';
 import 'package:trips_app/user/ui/widgets/profile_background.dart';
 import 'package:trips_app/widgets/text_input.dart';
 import 'package:trips_app/widgets/title_header.dart';
@@ -22,7 +25,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   Widget build(BuildContext context) {
     final _controllerPlaceTitle = TextEditingController();
     final _controllerPlaceDescription = TextEditingController();
-
+    UserBloc userBloc = BlocProvider.of<UserBloc>(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -68,6 +71,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       //Storage URL
                       //Cloud Firestore
                       //Save place data, likes and userowneer
+                      userBloc
+                          .updatePlaceData(PlaceModel(
+                        name: _controllerPlaceTitle.text,
+                        description: _controllerPlaceDescription.text,
+                        likes: 2,
+                      ))
+                          .whenComplete(() {
+                        print("Finished");
+                        Navigator.pop(context);
+                      });
                     },
                   ),
                 )

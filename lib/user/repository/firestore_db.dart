@@ -23,7 +23,7 @@ class CloudFirestoreDB {
     }, SetOptions(merge: true));
   }
 
-  Future<void> updatePlaceDate(PlaceModel place) async {
+  Future<void> updatePlaceData(PlaceModel place) async {
     CollectionReference placesRef = _db.collection(places);
 
     final String userUid = _auth.currentUser.uid;
