@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  Button({this.buttonText});
+  Button({this.buttonText, this.onPressed});
   final String buttonText;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: SizedBox(height: 50.0, child: Text("Navigating")),
-          backgroundColor: Colors.deepPurple[900],
-        ));
-      },
+      onTap: onPressed,
+
+      // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      //   content: SizedBox(height: 50.0, child: Text(buttonText)),
+      //   backgroundColor: Colors.deepPurple[900],
+      // ));
+
       child: Container(
         margin: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
         height: 50.0,

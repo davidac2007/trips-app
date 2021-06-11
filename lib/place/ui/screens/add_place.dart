@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:trips_app/place/ui/widgets/button.dart';
 import 'package:trips_app/place/ui/widgets/card_image.dart';
 import 'package:trips_app/place/ui/widgets/tlocation_input.dart';
 import 'package:trips_app/user/ui/widgets/profile_background.dart';
@@ -33,8 +34,8 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: CardImage(
-                      height: 320,
-                      width: 380,
+                      height: 280,
+                      width: 350,
                       left: 0.0,
                       pathImage: "assets/img/beach.jpeg",
                       iconData: Icons.camera_alt),
@@ -56,6 +57,18 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   child: LocationInput(
                     hintText: "Add location",
                     icon: Icons.location_on_outlined,
+                  ),
+                ),
+                Container(
+                  width: 70.0,
+                  child: Button(
+                    buttonText: "Submit",
+                    onPressed: () {
+                      //Firebase Sotrage
+                      //Storage URL
+                      //Cloud Firestore
+                      //Save place data, likes and userowneer
+                    },
                   ),
                 )
               ],
