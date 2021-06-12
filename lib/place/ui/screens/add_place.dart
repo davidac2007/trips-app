@@ -40,7 +40,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       height: 280,
                       width: 350,
                       left: 0.0,
-                      pathImage: "assets/img/beach.jpeg",
+                      pathImage: widget.image.path,
                       iconData: Icons.camera_alt),
                 ),
                 Container(

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:trips_app/place/ui/screens/add_place.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
 
@@ -28,13 +29,22 @@ class ProfileButtons extends StatelessWidget {
               icon: Icons.add,
               iconSize: 40.0,
               color: Color(0xFFFFFFFF),
-              onPressed: () {
-                File image;
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            AddPlaceScreen(image: image)));
+              onPressed: () async {
+                final picker = ImagePicker();
+
+                try {
+                  await picker
+                      .getImage(source: ImageSource.camera)
+                      .then((PickedFile image) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                AddPlaceScreen(image: File(image.path))));
+                  });
+                } catch (e) {
+                  print(e);
+                }
               }),
           // Log out
           CircleButton(
