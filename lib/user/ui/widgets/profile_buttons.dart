@@ -6,6 +6,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:trips_app/place/ui/screens/add_place.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
+import 'package:trips_app/user/ui/screens/profile.dart';
 
 class ProfileButtons extends StatelessWidget {
   @override
@@ -34,13 +35,15 @@ class ProfileButtons extends StatelessWidget {
                 picker
                     .getImage(source: ImageSource.camera)
                     .then((PickedFile image) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => AddPlaceScreen(
-                              image: image != null
-                                  ? File(image.path)
-                                  : File("assets/img/no_image.png"))));
+                  if (image != null) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => AddPlaceScreen(
+                                image: image != null
+                                    ? File(image.path)
+                                    : File("assets/img/no_image.png"))));
+                  } else {}
                 }).catchError((onError) => print(onError));
               }),
           // Log out
