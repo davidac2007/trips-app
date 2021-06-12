@@ -31,20 +31,17 @@ class ProfileButtons extends StatelessWidget {
               color: Color(0xFFFFFFFF),
               onPressed: () async {
                 final picker = ImagePicker();
-
-                try {
-                  await picker
-                      .getImage(source: ImageSource.camera)
-                      .then((PickedFile image) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                AddPlaceScreen(image: File(image.path))));
-                  });
-                } catch (e) {
-                  print(e);
-                }
+                picker
+                    .getImage(source: ImageSource.camera)
+                    .then((PickedFile image) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => AddPlaceScreen(
+                              image: image != null
+                                  ? File(image.path)
+                                  : File("assets/img/no_image.png"))));
+                }).catchError((onError) => print(onError));
               }),
           // Log out
           CircleButton(
