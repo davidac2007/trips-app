@@ -31,7 +31,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
         children: [
           GradientBackk(height: 300.0, title: "", align: 60.0),
           Container(
-            margin: EdgeInsets.only(bottom: 20.0, top: 20.0),
+            margin: EdgeInsets.only(bottom: 40.0, top: 20.0),
             child: ListView(
               children: [
                 Container(

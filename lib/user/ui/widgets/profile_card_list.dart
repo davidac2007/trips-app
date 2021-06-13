@@ -25,7 +25,7 @@ class ProfileCardImageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 40.0, top: 70.0),
+      margin: EdgeInsets.only(bottom: 40.0, top: 85.0),
       height: double.infinity,
       child: ListView(
         padding: EdgeInsets.all(20.0),
