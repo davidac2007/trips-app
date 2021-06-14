@@ -1,16 +1,24 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/place/model/place.dart';
+import 'package:trips_app/place/repository/firebase_storage_repo.dart';
 import 'package:trips_app/user/model/user.dart';
 import 'package:trips_app/user/repository/auth_repository.dart';
 import 'package:trips_app/user/repository/cloud_firestore_repo.dart';
 
 class UserBloc implements Bloc {
   final _authRepository = AuthRepository();
-
+  final _firebaseAuth = FirebaseAuth.instance;
   // Firebase Stream
   Stream<User> streamFirebase = FirebaseAuth.instance.authStateChanges();
   Stream<User> get authStatus => streamFirebase;
+
+  Future<User> get currentUser async {
+    return _firebaseAuth.currentUser;
+  }
 
   //Sign In with Google
   Future<UserCredential> signIn() => _authRepository.signInFirebase();
@@ -19,6 +27,11 @@ class UserBloc implements Bloc {
   final _cloudFirestoreRepo = CloudFirestoreRepo();
   void updateUserData(UserModel user) =>
       _cloudFirestoreRepo.updateUserDataFirestore(user);
+
+  // Save in FirebaseStorage
+  final _firebaseStorageRepo = FirebaseStorageRepo();
+  Future<UploadTask> uploadFile(String path, File image) =>
+      _firebaseStorageRepo.uploadFile(path, image);
 
   //Save place data in Firestore
 
