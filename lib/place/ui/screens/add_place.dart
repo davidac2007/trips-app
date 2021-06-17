@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/place/model/place.dart';
@@ -72,19 +73,35 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       //Storage URL
                       // Get logged user uid
                       userBloc.currentUser.then((User user) {
-                        if (user != null) {}
-                      });
-                      //Cloud Firestore
-                      //Save place data, likes and userowneer
-                      userBloc
-                          .updatePlaceData(PlaceModel(
-                        name: _controllerPlaceTitle.text,
-                        description: _controllerPlaceDescription.text,
-                        likes: 2,
-                      ))
-                          .whenComplete(() {
-                        print("Finished");
-                        Navigator.pop(context);
+                        if (user != null) {
+                          String uid = user.uid;
+                          String path =
+                              "${uid}/${DateTime.now().toString()}.jpg";
+                          userBloc
+                              .uploadFile(path, widget.image)
+                              .then(((UploadTask uploadTask) {
+                            uploadTask
+                                .whenComplete(() {})
+                                .then((TaskSnapshot snapshot) {
+                              snapshot.ref.getDownloadURL().then((urlImage) {
+                                print("Image url: $urlImage");
+                                //Cloud Firestore
+                                //Save place data, likes and userowneer
+                                userBloc
+                                    .updatePlaceData(PlaceModel(
+                                  name: _controllerPlaceTitle.text,
+                                  description: _controllerPlaceDescription.text,
+                                  uriImage: urlImage,
+                                  likes: 2,
+                                ))
+                                    .whenComplete(() {
+                                  print("Finished");
+                                  Navigator.pop(context);
+                                });
+                              });
+                            });
+                          }));
+                        }
                       });
                     },
                   ),
