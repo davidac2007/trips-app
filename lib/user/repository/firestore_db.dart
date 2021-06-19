@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/user/model/user.dart';
@@ -32,7 +33,15 @@ class CloudFirestoreDB {
       'name': place.name,
       'description': place.description,
       'likes': place.likes,
-      'userOwner': "$users/$userUid" // reference
+      'userOwner': _db.doc("$users/$userUid") // reference
+    }).then((DocumentReference dr) {
+      dr.get().then((DocumentSnapshot snapshot) {
+        snapshot.id; // place id
+        DocumentReference refUsers = _db.collection(users).doc(userUid);
+        refUsers.update({
+          'myPlaces': FieldValue.arrayUnion([_db.doc("$places/${snapshot.id}")])
+        });
+      });
     });
   }
 }
