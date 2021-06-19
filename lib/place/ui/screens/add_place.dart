@@ -75,8 +75,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       userBloc.currentUser.then((User user) {
                         if (user != null) {
                           String uid = user.uid;
-                          String path =
-                              "${uid}/${DateTime.now().toString()}.jpg";
+                          String path = "$uid/${DateTime.now().toString()}.jpg";
                           userBloc
                               .uploadFile(path, widget.image)
                               .then(((UploadTask uploadTask) {
