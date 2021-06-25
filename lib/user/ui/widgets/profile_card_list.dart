@@ -38,16 +38,11 @@ class ProfileCardImageList extends StatelessWidget {
               case ConnectionState.waiting:
                 return CircularProgressIndicator();
               case ConnectionState.done:
+                snapshot.data.documents;
                 return ListView(
-                  padding: EdgeInsets.all(20.0),
-                  scrollDirection: Axis.vertical,
-                  children: <Widget>[
-                    ProfileAppBar(),
-                    ProfileCardImage(place: place),
-                    ProfileCardImage(place: place2),
-                    SizedBox(height: 30.0)
-                  ],
-                );
+                    padding: EdgeInsets.all(20.0),
+                    scrollDirection: Axis.vertical,
+                    children: userBloc.buildPlaces(snapshot.data.documents));
               case ConnectionState.active:
 
               case ConnectionState.none:

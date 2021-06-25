@@ -11,10 +11,12 @@ import 'package:trips_app/user/model/user.dart';
 import 'package:trips_app/user/repository/auth_repository.dart';
 import 'package:trips_app/user/repository/cloud_firestore_repo.dart';
 import 'package:trips_app/user/repository/firestore_db.dart';
+import 'package:trips_app/user/ui/widgets/profile_card_image.dart';
 
 class UserBloc implements Bloc {
   final _authRepository = AuthRepository();
   final _firebaseAuth = FirebaseAuth.instance;
+  final _cloudFirestore = CloudFirestoreDB();
   // Firebase Stream
   Stream<User> streamFirebase = FirebaseAuth.instance.authStateChanges();
   Stream<User> get authStatus => streamFirebase;
@@ -44,6 +46,10 @@ class UserBloc implements Bloc {
   Stream<QuerySnapshot> placesListStream = FirebaseFirestore.instance
       .collection(CloudFirestoreDB().places)
       .snapshots();
+  Stream<QuerySnapshot> get placesStream => placesListStream;
+  List<ProfileCardImage> buildPlaces(
+          List<DocumentSnapshot> placesListSnapshot) =>
+      _cloudFirestore.buildPlaces(placesListSnapshot);
 
   signOut() {
     _authRepository.signOut();
