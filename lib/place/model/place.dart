@@ -1,5 +1,3 @@
-import 'package:trips_app/user/model/user.dart';
-
 class PlaceModel {
   String id;
   String name;

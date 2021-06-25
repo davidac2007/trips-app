@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
-import 'package:trips_app/user/ui/widgets/profile_app_bar.dart';
-
-import 'package:trips_app/user/ui/widgets/profile_card_image.dart';
 
 class ProfileCardImageList extends StatelessWidget {
   UserBloc userBloc;
