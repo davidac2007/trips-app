@@ -76,6 +76,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                         if (user != null) {
                           String uid = user.uid;
                           String path = "$uid/${DateTime.now().toString()}.jpg";
+
                           userBloc
                               .uploadFile(path, widget.image)
                               .then(((UploadTask uploadTask) {
@@ -86,6 +87,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                                 print("Image url: $urlImage");
                                 //Cloud Firestore
                                 //Save place data, likes and userowneer
+
                                 userBloc
                                     .updatePlaceData(PlaceModel(
                                   name: _controllerPlaceTitle.text,
@@ -100,7 +102,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                               });
                             });
                           }));
-                        }
+                        } else {}
                       });
                     },
                   ),
@@ -132,6 +134,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  void launchDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Uploading...'),
+        actions: <Widget>[Center(child: CircularProgressIndicator())],
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -8,6 +10,7 @@ import 'package:trips_app/place/repository/firebase_storage_repo.dart';
 import 'package:trips_app/user/model/user.dart';
 import 'package:trips_app/user/repository/auth_repository.dart';
 import 'package:trips_app/user/repository/cloud_firestore_repo.dart';
+import 'package:trips_app/user/repository/firestore_db.dart';
 
 class UserBloc implements Bloc {
   final _authRepository = AuthRepository();
@@ -37,6 +40,10 @@ class UserBloc implements Bloc {
 
   Future<void> updatePlaceData(PlaceModel place) =>
       _cloudFirestoreRepo.updatePlaceData(place);
+
+  Stream<QuerySnapshot> placesListStream = FirebaseFirestore.instance
+      .collection(CloudFirestoreDB().places)
+      .snapshots();
 
   signOut() {
     _authRepository.signOut();
