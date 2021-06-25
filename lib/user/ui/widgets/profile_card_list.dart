@@ -4,7 +4,6 @@ import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
 
 class ProfileCardImageList extends StatelessWidget {
-  UserBloc userBloc;
   final PlaceModel place = PlaceModel(
     id: "",
     name: "Knuckles Mountains Range",
@@ -24,7 +23,7 @@ class ProfileCardImageList extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    userBloc = BlocProvider.of<UserBloc>(context);
+    UserBloc userBloc = BlocProvider.of<UserBloc>(context);
     return Container(
       margin: EdgeInsets.only(bottom: 40.0, top: 85.0),
       height: double.infinity,
