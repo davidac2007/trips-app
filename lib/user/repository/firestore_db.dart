@@ -34,7 +34,8 @@ class CloudFirestoreDB {
       'name': place.name,
       'description': place.description,
       'likes': place.likes,
-      'userOwner': _db.doc("$users/$userUid") // reference
+      'userOwner': _db.doc("$users/$userUid"),
+      'urlImage': place.uriImage // reference
     }).then((DocumentReference dr) {
       dr.get().then((DocumentSnapshot snapshot) {
         snapshot.id; // place id

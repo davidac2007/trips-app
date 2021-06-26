@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/place/model/place.dart';
 import 'package:trips_app/user/bloc/user_bloc.dart';
+import 'package:trips_app/user/ui/widgets/profile_app_bar.dart';
 
 class ProfileCardImageList extends StatelessWidget {
   final PlaceModel place = PlaceModel(
@@ -27,24 +28,39 @@ class ProfileCardImageList extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 40.0, top: 85.0),
       height: double.infinity,
-      child: StreamBuilder(
-          stream: userBloc.placesStream,
-          builder: (context, AsyncSnapshot snapshot) {
-            switch (snapshot.connectionState) {
-              case ConnectionState.waiting:
-                return CircularProgressIndicator();
-              case ConnectionState.done:
-                snapshot.data.documents;
-                return ListView(
-                    padding: EdgeInsets.all(20.0),
-                    scrollDirection: Axis.vertical,
-                    children: userBloc.buildPlaces(snapshot.data.documents));
-              case ConnectionState.active:
-
-              case ConnectionState.none:
-              default:
-            }
-          }),
+      child: Expanded(
+        child: ListView(children: [
+          ProfileAppBar(),
+          StreamBuilder(
+              stream: userBloc.placesStream,
+              builder: (context, AsyncSnapshot snapshot) {
+                switch (snapshot.connectionState) {
+                  case ConnectionState.waiting:
+                    return CircularProgressIndicator();
+                  case ConnectionState.done:
+                    return Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                          children: userBloc.buildPlaces(snapshot.data.docs)),
+                    );
+                  case ConnectionState.active:
+                    return Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                          children: userBloc.buildPlaces(snapshot.data.docs)),
+                    );
+                  case ConnectionState.none:
+                    return CircularProgressIndicator();
+                  default:
+                    return Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                          children: userBloc.buildPlaces(snapshot.data.docs)),
+                    );
+                }
+              }),
+        ]),
+      ),
 
       // ListView(
       //   padding: EdgeInsets.all(20.0),
