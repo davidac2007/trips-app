@@ -64,7 +64,7 @@ class CloudFirestoreDB {
   }
 
   List<CardImage> buildPlaces(List<DocumentSnapshot> placesListSnapshot) {
-    List<CardImage> placesCard;
+    List<CardImage> placesCard = [];
     placesListSnapshot.forEach((p) {
       placesCard.add(CardImage(
         pathImage: p["urlImage"],
@@ -75,5 +75,6 @@ class CloudFirestoreDB {
         iconData: Icons.favorite_border,
       ));
     });
+    return placesCard;
   }
 }
