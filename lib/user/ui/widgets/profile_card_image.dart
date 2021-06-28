@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/place/ui/widgets/floating_action_button.dart';
 import 'package:trips_app/place/model/place.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ProfileCardImage extends StatelessWidget {
   ProfileCardImage({this.place});
@@ -14,9 +15,17 @@ class ProfileCardImage extends StatelessWidget {
         height: 250.0,
         width: double.infinity,
         margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(25.0),
+          child: CachedNetworkImage(
+            fit: BoxFit.cover,
+            imageUrl: place.uriImage,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                CircularProgressIndicator(value: downloadProgress.progress),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
+        ),
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(place.uriImage), fit: BoxFit.cover),
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
             shape: BoxShape.rectangle,
             boxShadow: <BoxShadow>[

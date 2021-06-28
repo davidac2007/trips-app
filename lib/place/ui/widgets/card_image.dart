@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'floating_action_button.dart';
@@ -27,9 +28,7 @@ class CardImage extends StatelessWidget {
       width: width,
       margin: EdgeInsets.only(top: 80.0, left: left),
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: NetworkImage(pathImage), fit: BoxFit.cover),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          borderRadius: BorderRadius.all(Radius.circular(25.0)),
           shape: BoxShape.rectangle,
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -37,6 +36,16 @@ class CardImage extends StatelessWidget {
                 blurRadius: 15.0,
                 offset: Offset(0.0, 7.0))
           ]),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: CachedNetworkImage(
+          fit: BoxFit.cover,
+          imageUrl: pathImage,
+          progressIndicatorBuilder: (context, url, downloadProgress) =>
+              CircularProgressIndicator(value: downloadProgress.progress),
+          errorWidget: (context, url, error) => Icon(Icons.error),
+        ),
+      ),
     );
     return Stack(
       alignment: Alignment(0.9, 1.1),
