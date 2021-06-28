@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -53,6 +54,11 @@ class UserBloc implements Bloc {
   List<ProfileCardImage> buildMyPlaces(
           List<DocumentSnapshot> placesListSnapshot) =>
       _cloudFirestore.buildMyPlaces(placesListSnapshot);
+
+  StreamController placeSelectedStreamController = StreamController();
+  Stream get placeSelectedStream => placeSelectedStreamController.stream;
+
+  StreamSink get placeSelectedSink => placeSelectedStreamController.sink;
 
   signOut() {
     _authRepository.signOut();
