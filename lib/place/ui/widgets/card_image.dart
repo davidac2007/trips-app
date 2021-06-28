@@ -44,6 +44,7 @@ class CardImage extends StatelessWidget {
         card,
         FloatingActionButtonGreen(
           iconData: iconData,
+          onPressed: onPressedFabIcon,
         )
       ],
     );

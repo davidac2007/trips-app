@@ -71,10 +71,19 @@ class CloudFirestoreDB {
         left: 20,
         width: 320,
         height: 420,
-        onPressedFabIcon: () {},
+        onPressedFabIcon: () {
+          likePlace(p.id);
+        },
         iconData: Icons.favorite_border,
       ));
     });
     return placesCard;
+  }
+
+  Future likePlace(String placeId) async {
+    await _db.collection(places).doc(placeId).get().then((DocumentSnapshot ds) {
+      int likes = ds["likes"];
+      _db.collection(places).doc(placeId).update({"likes:": likes + 1});
+    });
   }
 }

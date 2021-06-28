@@ -93,7 +93,6 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                                   name: _controllerPlaceTitle.text,
                                   description: _controllerPlaceDescription.text,
                                   uriImage: urlImage,
-                                  likes: 2,
                                 ))
                                     .whenComplete(() {
                                   print("Finished");
