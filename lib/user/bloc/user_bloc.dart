@@ -47,9 +47,9 @@ class UserBloc implements Bloc {
       .collection(CloudFirestoreDB().places)
       .snapshots();
   Stream<QuerySnapshot> get placesStream => placesListStream;
-  List<ProfileCardImage> buildPlaces(
+  List<ProfileCardImage> buildMyPlaces(
           List<DocumentSnapshot> placesListSnapshot) =>
-      _cloudFirestore.buildPlaces(placesListSnapshot);
+      _cloudFirestore.buildMyPlaces(placesListSnapshot);
 
   signOut() {
     _authRepository.signOut();

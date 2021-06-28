@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:trips_app/place/model/place.dart';
+import 'package:trips_app/place/ui/widgets/card_image.dart';
 import 'package:trips_app/user/model/user.dart';
 import 'package:trips_app/user/ui/widgets/profile_card_image.dart';
 
@@ -47,7 +49,7 @@ class CloudFirestoreDB {
     });
   }
 
-  List<ProfileCardImage> buildPlaces(
+  List<ProfileCardImage> buildMyPlaces(
       List<DocumentSnapshot> placesListSnapshot) {
     List<ProfileCardImage> profilePlaces = [];
     placesListSnapshot.forEach((p) {
@@ -59,5 +61,19 @@ class CloudFirestoreDB {
       ));
     });
     return profilePlaces;
+  }
+
+  List<CardImage> buildPlaces(List<DocumentSnapshot> placesListSnapshot) {
+    List<CardImage> placesCard;
+    placesListSnapshot.forEach((p) {
+      placesCard.add(CardImage(
+        pathImage: p["urlImage"],
+        left: 20,
+        width: 320,
+        height: 420,
+        onPressedFabIcon: () {},
+        iconData: Icons.favorite_border,
+      ));
+    });
   }
 }

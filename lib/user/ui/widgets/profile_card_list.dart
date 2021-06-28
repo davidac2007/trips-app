@@ -41,13 +41,13 @@ class ProfileCardImageList extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
-                          children: userBloc.buildPlaces(snapshot.data.docs)),
+                          children: userBloc.buildMyPlaces(snapshot.data.docs)),
                     );
                   case ConnectionState.active:
                     return Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
-                          children: userBloc.buildPlaces(snapshot.data.docs)),
+                          children: userBloc.buildMyPlaces(snapshot.data.docs)),
                     );
                   case ConnectionState.none:
                     return CircularProgressIndicator();
@@ -55,7 +55,7 @@ class ProfileCardImageList extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
-                          children: userBloc.buildPlaces(snapshot.data.docs)),
+                          children: userBloc.buildMyPlaces(snapshot.data.docs)),
                     );
                 }
               }),

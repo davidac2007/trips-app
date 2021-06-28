@@ -15,5 +15,5 @@ class CloudFirestoreRepo {
 
   List<ProfileCardImage> buildPlaces(
           List<DocumentSnapshot> placesListSnapshot) =>
-      _cloudFirestore.buildPlaces(placesListSnapshot);
+      _cloudFirestore.buildMyPlaces(placesListSnapshot);
 }
